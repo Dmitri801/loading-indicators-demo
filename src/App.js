@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import SpinnerOne from "./components/Spinner1";
+import SpinnerTwo from "./components/Spinner2";
+import SpinnerThree from "./components/Spinner3";
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <header>
+         <h1 className="title">Loaders..</h1>
         </header>
+        <main>
+          <div className="box">
+          <SpinnerOne />
+          </div>
+          <div className="box">
+          <SpinnerTwo />
+          </div>
+          <div className="box">
+          <SpinnerThree />
+          </div>
+          <div className="box">
+          Loader 2
+          </div>
+          <div className="box">
+           Loader 3
+          </div>
+        </main>
       </div>
     );
   }

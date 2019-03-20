@@ -1,0 +1,91 @@
+body {
+    background: #333;
+    color: #fff;
+    margin: 0;
+    padding: 0 75px;
+}
+
+.title {
+    font-family: 'ZCOOL XiaoWei', serif;
+    text-align: center;
+    font-size: 4em;
+}
+
+main {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 2fr;
+}
+
+.box {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.spinnerOne:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 9999;
+    top: 30%;
+    left: 50%;
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+    margin-left: -30px;
+    border-radius: 50%;
+    border: 2px outset #444;
+    border-top-color: rgb(11, 114, 211);
+    animation: spinner 1s linear infinite;
+}
+
+.spinnerTwo:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 9999;
+    top: 30%;
+    left: 50%;
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+    margin-left: -30px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: rgb(11, 114, 211);
+    border-bottom-color: rgb(11, 114, 211);
+    animation: spinner 1s linear infinite;
+}
+
+.spinnerThree:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 9999;
+    top: 30%;
+    left: 50%;
+    /* height: 100px; */
+    width: 100px;
+    margin-top: 20px;
+    margin-left: -30px;
+    border-radius: 50%;
+    border-top: 7px solid rgb(11, 114, 211);
+    border-right: 2px solid rgb(11, 114, 211);
+    animation: spinner 1.3s linear infinite;
+}
+
+.loaderOne {
+    width: 250px;
+    height: 250px;
+}
+
+
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
