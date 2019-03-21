@@ -1,8 +1,6 @@
 import React from "react"
 
 const SpinnerThree = (props) => {
-    console.log(props);
-
     return (  
         <div>
             <style dangerouslySetInnerHTML={{

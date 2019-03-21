@@ -1,13 +1,19 @@
 import React from "react"
 
-const SpinnerOne = () => {
+const LoaderOne = ({widthPerc}) => {
     return (
-        <div className="loaderOne">
-        <div className="column"></div>
-        <div className="column"></div>
-        <div className="column"></div>
-        </div>       
+        <div className="loaderOneContainer">
+ <div className="loaderOne" />
+        <div className="progress">
+        <div className="progressBar" />
+        <div style={{width: `${widthPerc}%`}} className="progressBarFill" />
+        </div>
+      
+        </div>
+       
+        
+              
     )
 }
 
-export default SpinnerOne;
+export default LoaderOne;

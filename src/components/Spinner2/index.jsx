@@ -4,6 +4,6 @@ const SpinnerOne = () => {
     return (
         <div className="spinnerTwo" />       
     )
-}
+} 
 
 export default SpinnerOne;

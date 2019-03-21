@@ -15,6 +15,8 @@ main {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 2fr 2fr;
+    justify-items: center;
+    padding: 25px;
 }
 
 .box {
@@ -23,6 +25,14 @@ main {
     height: 450px;
     border: 2px solid white;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinnerOne {
+    margin-left: 40px;
+    margin-bottom: 30px;
 }
 
 .spinnerOne:before {
@@ -37,10 +47,14 @@ main {
     margin-top: 20px;
     margin-left: -30px;
     border-radius: 50%;
-    border: 2px outset #444;
-    border-top-color: rgb(11, 114, 211);
-    animation: spinner 1s linear infinite;
+    border: 4px solid rgb(0, 183, 255);
+    border-top-color: rgb(0, 183, 255);
+    border-right-color: rgb(0, 72, 145);
+    border-left-color: rgb(12, 66, 121);
+    animation: spinner 1.3s linear infinite;
 }
+
+
 
 .spinnerTwo:before {
     content: "";
@@ -49,15 +63,15 @@ main {
     z-index: 9999;
     top: 30%;
     left: 50%;
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 60px;
     margin-top: 20px;
     margin-left: -30px;
     border-radius: 50%;
-    border: 3px solid transparent;
+    border: 4px solid transparent;
     border-top-color: rgb(11, 114, 211);
     border-bottom-color: rgb(11, 114, 211);
-    animation: spinner 1s linear infinite;
+    animation: spinner 1.3s linear infinite;
 }
 
 .spinnerThree:before {
@@ -72,14 +86,95 @@ main {
     margin-top: 20px;
     margin-left: -30px;
     border-radius: 50%;
-    border-top: 7px solid rgb(11, 114, 211);
+    border-top: 11px solid rgb(11, 114, 211);
     border-right: 2px solid rgb(11, 114, 211);
     animation: spinner 1.3s linear infinite;
 }
 
 .loaderOne {
-    width: 250px;
-    height: 250px;
+    width: 100px;
+    height: 100px;
+    /* background-color: white; */
+    background-image: url('./assets/transparent\ A.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    animation: loadingA 3.5s  linear infinite;
+}
+
+.loaderOneContainer .progress {
+    position: relative;
+    width: 100px;
+    height: 3px;
+    margin-top: 10px; 
+}
+
+.loaderOneContainer .progressBar {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #444;
+    
+    
+}
+
+.loaderOneContainer .progressBarFill {
+    top: 0;
+    position: absolute;
+    width: 20%;
+    height: 3px;
+    background-color: rgb(11, 114, 211);
+   
+}
+
+.loaderTwo {
+    display: flex;
+}
+
+.loaderTwo li {
+list-style: none;
+width: 30px;
+height: 30px;
+background-color: rgb(11, 114, 211);;
+margin: 0 10px;
+border-radius: 50%;
+animation: jumping 1s linear infinite;
+}
+
+.loaderTwo li:nth-child(1) {
+    animation-delay: 0.65s;
+}
+
+.loaderTwo li:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.loaderTwo li:nth-child(0) {
+    animation-delay: 0s;
+}
+
+.loaderThree {
+    width: 270px;
+    height: 7px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.loaderThreeBar {
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    border-radius: 10px;
+    background-color: #444;
+}
+
+.loaderThreeFill {
+    position: absolute;
+    background-image: url(./assets/blue-radial.png);
+    width: 40%;
+    height: 7px;
+    border-radius: 10px;
 }
 
 
@@ -87,5 +182,44 @@ main {
 @keyframes spinner {
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes loadingA {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: rotateX(0deg) rotateY(180deg);
+    }
+    70% {
+        transform: rotateX(180deg) rotateY(180deg);
+    }
+}
+
+@keyframes jumping {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+
+   
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateImg {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(360deg);
+    }
+    100% {
+        transform: rotateX(0deg);
     }
 }
